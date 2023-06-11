@@ -1,134 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My Social Network</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/3d4a962910.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>Login</title>
   </head>
   <body>
-    <div class="hover-menu">
-      <a href="" class="active"> Home </a>
-      <a href="" class="active"> Profile </a>
-      <a href="./chat.html" class="active"> Chat </a>
-    </div>
-    <header>
-      <h1>My Social Media</h1>
-    </header>
-
-    <div class="container">
-      <!-- Profile section -->
-      <div class="profile">
-        <img
-          class="fa-solid fa-user fa-2xl"
-          src="profile-picture.jpg"
-          alt="Profile Picture"
-        />
-        <div>
-          <h2>John Doe</h2>
-          <p>Software Engineer</p>
-        </div>
-      </div>
-
-      <!-- Post section -->
-      <div class="post">
-        <div class="post-header">
-          <img
-            src="friend1-profile-picture.jpg"
-            alt="Friend 1 Profile Picture"
-          />
-          <h3>Friend 1</h3>
-        </div>
-        <div class="post-content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            aliquet est sed nunc ultricesconsectetur. Proin rutrum nisl at arcu
-            consectetur, sit amet eleifend magna condimentum. Nulla facilisi. In
-            blandit turpis vel eleifend auctor. Integer et risus consequat,
-            dignissim lacus ac, ultrices enim. Pellentesque non aliquet nisl,
-            non dignissim odio. Nam pharetra ullamcorper sapien a lobortis. Cras
-            consequat interdum nunc, nec varius enim consequat nec. Curabitur
-            lacinia dolor id tristique consequat.
-          </p>
-        </div>
-        <div class="comments">
-          <div class="comment">
-            <p>Comment 1 by User 1</p>
-          </div>
-          <div class="comment">
-            <p>Comment 2 by User 2</p>
-          </div>
-        </div>
-      </div>
-      <div class="post">
-        <div class="post-header">
-          <img
-            src="friend2-profile-picture.jpg"
-            alt="Friend 2 Profile Picture"
-          />
-          <h3>Friend 2</h3>
-        </div>
-        <div class="post-content">
-          <p>
-            Donec feugiat dui a justo elementum, non tincidunt lectus venenatis.
-            Quisque quis tempor est, ac fermentum leo. Vestibulum ante ipsum
-            primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-            Curabitur rutrum vestibulum felis non lobortis. Aliquam auctor
-            venenatis aliquam. Morbi sit amet arcu tellus. Fusce congue libero a
-            erat gravida dictum. Curabitur vel metus nec ipsum ultricies
-            bibendum a non ligula. Vivamus efficitur, dui id euismod efficitur,
-            ipsum ligula fringilla dui, at eleifend velit est in ipsum.
-          </p>
-        </div>
-        <div class="comments">
-          <div class="comment">
-            <p>Comment 1 by User 3</p>
-          </div>
-          <div class="comment">
-            <p>Comment 2 by User 4</p>
-          </div>
-        </div>
-      </div>
-      <div class="conversation">
-        <h2>Conversation with Friend 1</h2>
-        <div class="message">
-          <div class="sender">
-            <img
-              src="friend1-profile-picture.jpg"
-              alt="Friend 1 Profile Picture"
-            />
-            <p>Friend 1</p>
-          </div>
-          <p>Hello, how are you doing?</p>
-        </div>
-        <div class="message">
-          <div class="sender">
-            <img src="profile-picture.jpg" alt="Your Profile Picture" />
-            <p>You</p>
-          </div>
-          <p>Hey! I'm doing great. How about you?</p>
-        </div>
-        <div class="message">
-          <div class="sender">
-            <img
-              src="friend1-profile-picture.jpg"
-              alt="Friend 1 Profile Picture"
-            />
-            <p>Friend 1</p>
-          </div>
-          <p>I'm good too. Thanks for asking!</p>
+    <h1>Login - <span>MyApp</span></h1>
+    <div class="gradient"></div>
+    <div class="main">
+      <div class="form-container">
+        <form action="/homePage/home.html">
+          <label for="email">Email:</label>
+          <input type="email" id="username" name="username" required />
+          <br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <br />
+          <br />
+          <button class="cta">Login</button>
+        </form>
+        <div class="divider"><span>OR</span></div>
+        <div class="other-logins">
+          <button>
+            <div><i class="fa-brands fa-google"></i></div>
+            <span>Sign in with Google</span>
+          </button>
+          <button>
+            <div><i class="fa-brands fa-github"></i></div>
+            <span>Sign in with Github</span>
+          </button>
         </div>
       </div>
     </div>
-    <!-- Existing code -->
-
-    <!-- Conversation screen section -->
-
-    <!-- Remaining code -->
-
-    <footer>&copy; 2023 My Social Media. All rights reserved.</footer>
   </body>
 </html>

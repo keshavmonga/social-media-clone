@@ -13,22 +13,44 @@
   --bg-light: #f1f1f1;
 }
 
-body {
-  background-color: #f1f1f1;
+header {
+  position: fixed;
+  inset: 0 0 90% 0;
+  background-color: #333;
+  padding: 20px;
+  z-index: 10;
+  text-align: center;
 }
 
+footer{
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  top: 0;
+  background-image: linear-gradient(to right, #ffc107, #fb8c00, #ffeb3b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
 .container {
-  background: #f1f1f1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
   padding: 1rem;
-  border: 1px solid red;
   margin: auto;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
@@ -38,21 +60,24 @@ body {
 
 .container .cover-pic img {
   aspect-ratio: 18/9;
+  opacity: 0.8;
   width: 100%;
   height: 200px;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .container .dp {
   position: absolute;
   top: 180px;
   left: 50%;
+  width: 5rem;
   transform: translate(-50%);
 }
 
 .container .dp img {
-  width: 4.5rem;
-  height: 4.5rem;
+  aspect-ratio: 1/1;
+  width: 100%;
   border-radius: 50%;
   border: 3px solid #f1f1f1;
   top: 0;
@@ -66,9 +91,8 @@ body {
 
 .bio {
   width: 100%;
-  margin-top: 2rem;
   padding: 20px;
-  margin-top: 0.4rem;
+  margin-top: 1.1rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
@@ -110,6 +134,7 @@ body {
   padding: 20px;
   text-align: center;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .post:hover .stats {
@@ -117,6 +142,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.post:hover {
+  transform: scale(1.05);
 }
 
 .stats {
@@ -131,4 +160,32 @@ body {
   color: white;
   padding: 20px;
   text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.follow-count {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33%);
+  place-items: center;
+}
+
+.follow-count span {
+  font-weight: bold;
+  transition: all 0.04s ease-in-out;
+}
+
+.follow-count span:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  padding-inline: 1rem;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 468px) {
+  .container {
+    box-shadow: none;
+    width: 100%;
+  }
 }
