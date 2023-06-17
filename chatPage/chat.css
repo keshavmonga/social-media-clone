@@ -61,6 +61,7 @@ footer {
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .chat-section {
@@ -68,6 +69,7 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   padding: 1rem;
   background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .search {
@@ -177,7 +179,7 @@ footer {
   float: left;
   border-radius: 0px 4rem 4rem 4rem;
 }
-.messages .recieved {
+.messages .sent {
   background-color: cornflowerblue;
   float: right;
   border-radius: 4rem 4rem 0px 4rem;
@@ -185,8 +187,8 @@ footer {
 
 .fa-paper-plane {
   position: absolute;
-  top: 0.4rem;
-  right: 0.5rem;
+  top: 0.3rem;
+  right: 0.3rem;
   padding: 0.5rem;
   transition: all 0.2s ease-in-out;
 }
@@ -225,5 +227,8 @@ footer {
   }
   header{
     display: none;
+  }
+  .user-avatar{
+    width: 1.6rem;
   }
 }

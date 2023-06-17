@@ -86,7 +86,7 @@ button:focus {
 }
 
 button:active {
-  animation: press 0.2s 1 linear;
+  animation: press 0.2s;
 }
 
 .divider {
@@ -130,7 +130,6 @@ button:active {
   height: 88vh;
   max-height: 88vh;
   z-index: -1;
-  width: 100%;
   max-width: 640px;
   background-image: radial-gradient(
       at 27% 37%,
@@ -144,7 +143,6 @@ button:active {
     radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
     radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
   position: absolute;
-  content: "";
   width: 100%;
   filter: blur(100px) saturate(150%);
   top: 80px;
@@ -168,7 +166,7 @@ h1 span {
     transform: scale(1);
   }
   50% {
-    transform: scale(0.90);
+    transform: scale(0.9);
   }
   to {
     transform: scale(1);
