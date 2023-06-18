@@ -184,6 +184,9 @@ footer {
   float: right;
   border-radius: 4rem 4rem 0px 4rem;
 }
+.messages::-webkit-scrollbar{
+  display: none;
+}
 
 .fa-paper-plane {
   position: absolute;

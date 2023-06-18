@@ -172,3 +172,28 @@ h1 span {
     transform: scale(1);
   }
 }
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  color: #252525;
+  font-weight: bold;
+}
+
+label{
+  display: flex;
+  align-items: center;
+}

@@ -17,11 +17,25 @@
     <div class="main">
       <div class="form-container">
         <form action="/homePage/home.html">
-          <label for="email">Email:</label>
-          <input type="email" id="username" name="username" required />
+          <label for="email">
+            Email:
+            <i id="mail-check" class="fa-check fa-solid hide"></i>
+            <i id="mail-fail" class="fa-regular fa-circle-xmark hide"></i>
+          </label>
+          <input type="email" id="mailId" name="mailId" required />
           <br />
-          <label for="password">Password:</label>
+          <label for="password">
+            Password:
+            <i id="pass-check" class="fa-check fa-solid hide"></i>
+            <i id="pass-fail" class="fa-regular fa-circle-xmark hide"></i>
+          </label>
           <input type="password" id="password" name="password" required />
+          <p id="passInst" class="hide">
+            <i class="fa-solid fa-circle-info"></i>
+            4 to 24 characters.<br />
+            Must begin with a letter.<br />
+            Letters, numbers, underscores, hyphens allowed.
+          </p>
           <br />
           <br />
           <button class="cta">Login</button>
@@ -39,5 +53,54 @@
         </div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        const passRegex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+        const mailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+        $("#mailId").on("input", (e) => {
+          if (mailRegex.test(e.target.value)) {
+            $("#mail-check").addClass("valid");
+            $("#mail-check").removeClass("hide");
+            $("#mail-fail").addClass("hide");
+            $("#mail-fail").removeClass("invalid");
+          } else {
+            $("#mail-fail").removeClass("hide");
+            $("#mail-fail").addClass("invalid");
+            $("#mail-check").removeClass("valid");
+            $("#mail-check").addClass("hide");
+          }
+        });
+
+        $("#password").on("input", (e) => {
+          if (passRegex.test(e.target.value)) {
+            $("#pass-check").addClass("valid");
+            $("#pass-check").removeClass("hide");
+            $("#pass-fail").addClass("hide");
+            $("#pass-fail").removeClass("invalid");
+          } else {
+            $("#pass-fail").removeClass("hide");
+            $("#pass-fail").addClass("invalid");
+            $("#pass-check").removeClass("valid");
+            $("#pass-check").addClass("hide");
+          }
+        });
+
+        $("#password").focus(() => {
+          $("#passInst").removeClass("hide");
+          $("#passInst").addClass("instructions");
+        });
+
+        $("#password").blur(() => {
+          $("#passInst").removeClass("instructions");
+          $("#passInst").addClass("hide");
+        });
+        $(document).on("change", 'input[type="password"]', function (e) {
+          console.log("object");
+        });
+      });
+    </script>
   </body>
 </html>
