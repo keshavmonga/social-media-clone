@@ -11,7 +11,6 @@ input.addEventListener('change', (e) => {
     dp.src = e.target.result
   })
   reader.readAsDataURL(file);
-
 })
 
 dp.addEventListener('click', () => { input.click() })
