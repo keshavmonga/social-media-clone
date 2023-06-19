@@ -1,7 +1,15 @@
-const actions = document.querySelector('.post-actions')
-const like = document.querySelector('.fa-heart')
+const storyAvatar = document.getElementsByClassName('avatar')
+const userAvatar = document.getElementsByClassName('user-avatar')
+const posts = document.getElementsByClassName('main-post')
 
-actions.addEventListener('click',()=>{
-  like.classList.toggle('fa-regular')
-  console.log("object")
+Array.from(storyAvatar).forEach(avatar => {
+  avatar.style.backgroundImage = 'url("./placeholder.jpg")'
+})
+
+Array.from(userAvatar).forEach(avatar => {
+  avatar.style.backgroundImage = 'url("./placeholder.jpg")'
+})
+
+Array.from(posts).forEach(post => {
+  post.style.backgroundImage = 'url("./post-placeholder.jpg")'
 })
