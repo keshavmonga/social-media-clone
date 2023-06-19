@@ -1,30 +1,53 @@
 const chatBoxInput = document.querySelector('#chatBox')
+const search = document.getElementsByTagName('input')[0]
 const sendButton = document.querySelector('.fa-paper-plane')
 const messages = document.querySelector('.messages')
 const userContainer = document.querySelector('.users-container')
 const regex = new RegExp('^(?=\s*$)')
 
-const users = [
-  { name: "Hinish", lastMsg: 'Hi' },
-  { name: "Hridyesh", lastMsg: 'Bro' },
-  { name: "Ishmeet", lastMsg: 'Hello' },
-  { name: "Jatin", lastMsg: 'Bhai' },
-]
+const usersData = []
 
-users.forEach(user => {
-  userContainer.innerHTML +=
-    `<div class="user">
-    <div class="user-avatar"></div>
-    <div class="user-info">
-      <span>${user.name}</span>
-      <p>${user.lastMsg}</p>
-    </div>
-  </div>
-  <div class="divider"></div>`;
-})
+const getUsers = async () => {
+  const res = await fetch('https://dummyjson.com/users/?limit=10');
+  const data = await res.json();
+  return data.users
+}
+const result = getUsers()
+  .then(users => {
+    users.forEach(user => {
+      userContainer.innerHTML +=
+        `<div class="user">
+            <div class="user-avatar"></div>
+              <div class="user-info">
+              <span>${user.firstName}</span>
+              <p>${user.university.substr(1, 12)}</p>
+              </div>
+            </div>
+        <div class="divider"></div>`;
+      usersData.push(user)
+    })
+  })
 
 
 messages.scrollTo({ top: '100%' })
+
+const handleSearch = (e) => {
+  const value = e.target.value.toLowerCase()
+  const filteredData = usersData.filter(data => data.firstName.toLowerCase().includes(value))
+  userContainer.innerHTML = ''
+  filteredData.forEach(user => {
+    userContainer.innerHTML +=
+      `<div class="user">
+            <div class="user-avatar"></div>
+              <div class="user-info">
+              <span>${user.firstName}</span>
+              <p>${user.university.substr(1, 12)}</p>
+              </div>
+            </div>
+        <div class="divider"></div>`
+    ;
+  })
+}
 
 const sendMessage = (e) => {
   if (e.code !== 'Enter') { return }
@@ -44,3 +67,4 @@ const sendMessage = (e) => {
 
 sendButton.addEventListener('onclick', sendMessage)
 document.addEventListener('keyup', sendMessage)
+search.addEventListener('input', handleSearch)

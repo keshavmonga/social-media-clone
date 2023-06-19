@@ -197,3 +197,11 @@ label{
   display: flex;
   align-items: center;
 }
+
+#google{
+  text-decoration: none;
+}
+#google:visited{
+  color: black;
+  text-decoration: none;
+}

@@ -138,7 +138,7 @@ header h1 {
 }
 .main-post {
   aspect-ratio: 4/5;
-  background-color: lightgray;
+  background:url('./placeholder.jpg');
   width: 100%;
 }
 
@@ -232,10 +232,11 @@ header h1 {
 }
 
 .post-actions:hover .rxns {
-  display: block;
+  display: none;
 }
 
 .rxns {
+  display: none;
   background-color: #f1f1f1;
   position: absolute;
   bottom: 10%;
