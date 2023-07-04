@@ -7,10 +7,9 @@ Array.from(posts).forEach(post => {
   post.style.backgroundImage = 'url("./post-placeholder.jpg")'
 })
 
-console.log(dp, div, input)
 
 input.addEventListener('change', (e) => {
-  let file = e.target.files[0]
+  const file = e.target.files[0]
   const reader = new FileReader();
   reader.addEventListener('load', (e) => {
     dp.src = e.target.result

@@ -1,0 +1,25 @@
+header {
+  background-color: #333;
+  padding: 1px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  background-image: linear-gradient(to right, #ffc107, #fb8c00, #ffeb3b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.4rem;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
